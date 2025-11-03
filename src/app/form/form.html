@@ -1,0 +1,58 @@
+<form [formGroup]="cardForm" (ngSubmit)="send()" autocomplete="off">
+  <div>
+    <label for="holdername">Holder Name:</label>
+    <input 
+      id="holdername" 
+      type="text" 
+      formControlName="holdername"
+      autocomplete="off">
+  </div>
+
+  <div>
+    <label for="card">Card Number:</label>
+    <input 
+      id="card" 
+      type="text" 
+      formControlName="card"
+      autocomplete="off"
+      inputmode="numeric"
+      maxlength="19">
+  </div>
+
+  <div>
+    <label for="month">Month:</label>
+    <input 
+      id="month" 
+      type="text" 
+      formControlName="month"
+      autocomplete="off"
+      inputmode="numeric"
+      maxlength="2"
+      placeholder="MM">
+  </div>
+
+  <div>
+    <label for="year">Year:</label>
+    <input 
+      id="year" 
+      type="text" 
+      formControlName="year"
+      autocomplete="off"
+      inputmode="numeric"
+      maxlength="2"
+      placeholder="YY">
+  </div>
+
+  <div>
+    <label for="cvv">CVV:</label>
+    <input 
+      id="cvv" 
+      type="text" 
+      formControlName="cvv"
+      autocomplete="off"
+      inputmode="numeric"
+      maxlength="4">
+  </div>
+
+  <button type="submit" [disabled]="!cardForm.valid">Send</button>
+</form>
